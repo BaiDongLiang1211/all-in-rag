@@ -71,3 +71,6 @@ rag/
 # LLM API keys
 *.key
 *.secret
+
+# Docker runtime data
+/code/volumes/

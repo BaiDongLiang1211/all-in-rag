@@ -1,0 +1,1025 @@
+[1] Title | page=1
+Bh
+
+[2] Title | page=1
+新 闻
+
+[3] Title | page=1
+贴吧 知道 Be BR 视频 地 图 文库 资讯 采购 百科
+
+[4] Title | page=1
+百度 首页 SR
+
+[5] Title | page=1
+ith
+
+[6] Title | page=1
+8@ Bai 人 百科 | eee
+
+[7] Title | page=1
+x
+
+[8] Title | page=1
+本
+
+[9] Title | page=1
+全 站 搜索 | my
+
+[10] UncategorizedText | page=1
+近期 有 不 法 分 子 冒 充 百度 百科 官方 人 员 ， 以 删除 词
+
+[11] Title | page=1
+条
+
+[12] NarrativeText | page=1
+为 由 威胁 并 圾 诈 相关 企业 。 在 此 严正 声明 : 百度 百科 是 免费 编辑 平台 ， 绝 不 存在 收费 代 编 服务 ， 请 忽 上 当 受骗 ! 详情 >>
+
+[13] Title | page=1
+首页
+
+[14] Title | page=1
+pias
+
+[15] Title | page=1
+特色 百科
+
+[16] Title | page=1
+知识 专题
+
+[17] Title | page=1
+加 入 百科
+
+[18] Title | page=1
+百科 团队
+
+[19] Title | page=1
+权威 合作
+
+[20] Title | page=1
+> REA 增 强生 成 大 模型 前 治 技术 之 一
+
+[21] Title | page=1
+1 后 讨论 Lew
+
+[22] Title | page=1
+吨 播报
+
+[23] NarrativeText | page=1
+ling 百 到
+
+[24] Title | page=1
+feminist nt
+
+[25] Title | page=1
+OACS
+
+[26] UncategorizedText | page=1
+@
+
+[27] Title | page=1
+ist
+
+[28] Title | page=1
+ey
+
+[29] Title | page=1
+cb 国 . 科学 百 和 致力 于 权威 的 科学 传
+
+[30] Title | page=1
+科普 中
+
+[31] NarrativeText | page=1
+RAGFlow
+
+[32] UncategorizedText | page=1
+Wee) O11) O38
+
+[33] Title | page=1
+同义词 | RAG 〈 大 模型 内 化 吸收 知识 的 过
+
+[34] NarrativeText | page=1
+程 )》 条 由 中 国 科学 院 大 学 计算 机 科学 与 技术 学 院 、 中 国 科学 院 计算 技术 研究 所 参与 编辑 并 审核 ， 经 科普 中 国 .科学 百科 认证 。 检索 增强 生成 (Retrievalaugmented Generation) ， 简 称 RAG， 是 当下 热门 的 大 模型 前 沿 技术 之 一 [0。 检索 增强 生成 模型 结合 了 语言 模型 和 信息 检索 技术 。 具 体 来 说 ， 当 模型 需要 生成 文本 或 者 回答 问题 时 ， 它 会 先 从 文档 集合 中 检索 出 相关 的 信息 ， 然 后 利用 这 些 检索 到 的 信息 来 指导 文本 的 生成 ， 从 而 提高 预测 的 质量 和 准确 性 四。
+
+[35] Title | page=1
+ARH
+
+[36] Title | page=1
+本 词
+
+[37] Title | page=1
+检 索 增 强生 成
+
+[38] Title | page=1
+一 个 庞大 的
+
+[39] Title | page=1
+mn e
+
+[40] UncategorizedText | page=1
+<
+
+[41] Title | page=1
+€ 检索 增强 生成 的 概述 图
+
+[42] UncategorizedText | page=1
+=|
+
+[43] Title | page=1
+中 文 名
+
+[44] Title | page=1
+检索 增强 生成
+
+[45] Title | page=1
+所 属
+
+[46] Title | page=1
+学 科
+
+[47] Title | page=1
+人 工 智能
+
+[48] Title | page=1
+外 文
+
+[49] Title | page=1
+名
+
+[50] Title | page=1
+Retrieval-augmented Generation
+
+[51] Title | page=1
+简
+
+[52] Title | page=1
+称
+
+[53] Title | page=1
+RAG
+
+[54] Title | page=1
+中 国 科 学
+
+[55] Title | page=1
+院 大 当
+
+[56] Title | page=1
+春分 工程 .科学 百科
+
+[57] Title | page=1
+日
+
+[58] UncategorizedText | page=1
+1
+
+[59] Title | page=1
+历史 沿革
+
+[60] NarrativeText | page=1
+ae 9 限制 ce fEAR’ 局 42 检索 结果 中 的 噪声 基于 Logt 的 RAG 额外 开销 推出 性 RAG 检索 器 和 生成 器 之 间 6 理论 依据 的 差距 理论 依据 屁 统 复杂 性 增加
+
+[61] UncategorizedText | page=1
+11
+
+[62] NarrativeText | page=1
+未 来 的 潜在 方向 ay 谐 灵活 的 RAG FOL 融入 长 尾 和 实时 知识 与 其 他 技术 相 结 合 多 模 态 RAG 多 模
+
+[63] Title | page=1
+2 技术 定义
+
+[64] Title | page=1
+NE PETS
+
+[65] UncategorizedText | page=1
+后 3 工作 流程 4 重要 组 成 成 重要 组 成 成 分 ER
+
+[66] UncategorizedText | page=1
+7
+
+[67] Title | page=1
+应 用 场景
+
+[68] Title | page=1
+加 10 宛 长 的 上 下 文
+
+[69] Title | page=1
+检索 器 5 分 类
+
+[70] Title | page=1
+i 8 技术 优势
+
+[71] Title | page=1
+wR
+
+[72] Title | page=1
+AE
+
+[73] Title | page=1
+中 国 科学 院
+
+[74] Title | page=1
+大 学 计算 机 科学 与 技术
+
+[75] Title | page=1
+查
+
+[76] NarrativeText | page=1
+是 历史 沿 2020 年 ，Facebook Al Research(FAIR) 团 队 发 表 名 为 《Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks) 的 论文 该 篇 论文 对 RAG 概 念 进行 详细 介绍 和 解释 加。
+
+[77] Title | page=1
+播报
+
+[78] Title | page=1
+TAA 说 分 享 你 的 世界
+
+[79] UncategorizedText | page=1
+，。
+
+[80] NarrativeText | page=1
+起 初 ，Naive RAG 遵循 传统 过 程 Indexing-Retrieval-Generation， 也 被 称 为 “Retrieve-Read" 框架 。
+
+[81] NarrativeText | page=1
+之 后 ，Advanced RAG 提高 检索 质量 ， 采 用 了 检索 前 和 检索 后 策略 ( pre-retrieval and post-retrieval strategies ) 。 为 了 解决 索引 问题 ，Advanced RAG 通过 使 用 滑动 窗口 方法 、 细 粒度 分 段 和 元 数据 的 合并 来 改进 其 索引 技术 。
+
+[82] UncategorizedText | page=1
+RAG 技术 : 让 AI 从 “BR” 2 “FPN EH" |
+
+[83] UncategorizedText | page=1
+后 来 ，Modular RAG 引入 多 个 特定 功能 模块 和 蔡 换 现 有 模块 ， 总 体 上 展示 了 更 an, UETARMEEMERS Hid |,
+
+[84] Title | page=1
+大 的 灵活 性 。 其 过 程
+
+[85] Title | page=1
+并 不 局 限于 顺序 检索 和
+
+[86] Title | page=1
+QD AlterWAER - 知名 科技 自 媒体
+
+[87] Title | page=1
+用 技术 定义
+
+[88] Title | page=1
+) 播报
+
+[89] Title | page=1
+权威 合作 编辑 ® 站 |
+
+[90] NarrativeText | page=1
+检索 增强 生成 ( Retrieval Augmented Generation, RAG) 是 一 种 结合 检索 和 人 生成 技术 的 模型 。 它 通过 引用 外 部 知识 库 息 来 生成 答案 或 内 容 ， 具 有 较 强 的 可 解释 性 和 定制 能 力 ， 适 用 于 问答 系统 、 文 档 生 成 、 智 能 助手 等 多 个 自然 语言 处 理 任务 中 。 RAG 模 型 的 优势 在 于 通用 性 强 、 可 实现 即时 的 知识 更 新 ， 以 及 通过 端 到 端 评估 方法 提供 更 高 效 和 精准 的 信息 服务 中 。
+
+[91] Title | page=1
+的 信
+
+[92] Title | page=1
+Explore our developer-friendly HTML to PDF API
+
+[93] NarrativeText | page=1
+Printed using PDFCrowd HTML to PDF
+
+[94] Title | page=2
+工作 流程
+
+[95] Title | page=2
+dy 播报
+
+[96] Title | page=2
+习
+
+[97] Title | page=2
+什 么 是 权威 编辑
+
+[98] UncategorizedText | page=2
+RAG 的 工作 原理 是 通过 检索 大 规模 文档 集合 中 的 相关 信息 ， 然 后 利用 这 些 信 息 来 指导 文本 的 生成 ， 从 而 提高 预测 的 质量 和 准 ate,
+
+[99] Title | page=2
+词 条 统计
+
+[100] Title | page=2
+浏览
+
+[101] UncategorizedText | page=2
+次 数 : 158442 次 数 ; 8 次 历史 版 本 RSM: si -02-: ean oan omectarial 实 出 贡献 和 S4hehezi A, @
+
+[102] UncategorizedText | page=2
+RAG 包含 三 个 主要 过 程 : 检索 、 增 强 和 生成 四。
+
+[103] Title | page=2
+编辑
+
+[104] Title | page=2
+次
+
+[105] UncategorizedText | page=2
++ 检索 : 根据 用 的 查询 内 ， 从 外 部 知识 库 获 取 相关 信息 。 具 体 而 言 ， 将 用 户 量 数据 库 中 存储 的 相关 知识 进行 比 对 。 通 过 相似 性 搜索 ， 找 出 与 查询 最 匹配 的 的 查询 内 容 和 检索 到 的 相关 知识 一 起 庶 入 到 一 个 预 设
+
+[106] Title | page=2
+户
+
+[107] Title | page=2
+容
+
+[108] Title | page=2
+的 查询 通过 斑 入 模型 转换 为 向 个 数据 。
+
+[109] Title | page=2
+量 ， 以 便 与 向
+
+[110] Title | page=2
+前
+
+[111] Title | page=2
+K
+
+[112] Title | page=2
+。 增强 : 将 用 户
+
+[113] Title | page=2
+的 提示 词 模板 中 。
+
+[114] Title | page=2
+。 生成 : 将 经
+
+[115] Title | page=2
+过 检索 增强 的 提示 词
+
+[116] UncategorizedText | page=2
+内 容 输入 到 大 型 语言 模型 中 ， 以 生成 所 需 的 输出 。
+
+[117] Title | page=2
+U sers
+
+[118] Title | page=2
+Input
+
+[119] Title | page=2
+L
+
+[120] Title | page=2
+L
+
+[121] ListItem | page=2
+2) > encode 是
+
+[122] Title | page=2
+导 Hugging Face Gopenal Gemini
+
+[123] Title | page=2
+& Index
+
+[124] Title | page=2
+stability.ai
+
+[125] NarrativeText | page=2
+区 odelScope
+
+[126] Title | page=2
+Retriever
+
+[127] Title | page=2
+Generator
+
+[128] Title | page=2
+Result
+
+[129] Title | page=2
+图 示 通用 检索 增强 生成 架构
+
+[130] UncategorizedText | page=2
+通过 这 一 过 程 ，RAG 模 型 能 在 各 种 自然 语言 处 理 任务 中 发 挥 作用 ， 如 问答 系统 、 文 档 生成 和 自动 摘要 、 智 能 助手 和 虚拟 代 理 、 信 息 检索 以 及 知识 图 谱 盾 充 等 。 同 时 ，RAG 模 型 具有 及 时 更 新 、 解 释 性 强 、 高 度 定制 能 力 、 安 全 隐私 管理 以 及 减少 训练 成 本 等 优点 。 与 微调 相 比 ，RAG 是 通用 的 ， 适 用 于 多 种 任务 ， 并 且 能 够 实现 即时 的 知识 更 新 而 无 需 重新 训练 模型 []。
+
+[131] Title | page=2
+够
+
+[132] Title | page=2
+整个 RAG 系统 由 两
+
+[133] UncategorizedText | page=2
+个 核心 模块 组 成 : 检索 器 和 生成 器 。 检 索 器 从 数据 存储 中 搜索 相关 信息 ， 生 成 器 生成 所
+
+[134] Title | page=2
+需 内 容 站。
+
+[135] NarrativeText | page=2
+ut 成 器 生成 式 人 工 智 能 在 各 种 任务 中 的 出 色 表现 开启 了 AIGC ( 人 工 智 能 生成 内 容 ) 时 代 。 生 成 模块 在 RAG 系统 中 起 着 至 关 重 要 的 作用 。 不 同 的 生成 模型 适用 于 不 同 的 场景 ， 例 如 用 于 文本 到 文本 任务 的 Transformer 模型 、 用 于 图 VisualGPT、 用 于 文本 到 图 像 任 务 的 Stable Diffusion， 以 及 用 于 文本 到 代码 任务 的 Codex 等 四 。
+
+[136] Title | page=2
+像 到 文本 任务 的
+
+[137] Title | page=2
+生成 器
+
+[138] NarrativeText | page=2
+的 基础 技术 包括 Transformer 模型 、 长 短期 记忆 网 络 (LSTM ) Transformer 模 型 种 用 于 处 理 语言 数据 的 神经 网 络 模型 ， 非 常 适合 用 于 翻译 、 文 本 生成 和 理解 等 任务 回 。 由 自 注意 力 机 制 、 前 馈 网 络 、 层 规范 化 模块 和 残 差 网 络 组 成 加 长 短期 记忆 网 络 (LSTM，Long Short-Term Memory ) 是 一 存在 的 长 期 依赖 问题 而 专门 设计 出 来 的 ， 所 有 的 RNN 都 具有 一 扩散 模型 是 一 类 深度 生成 模型 ， 可 以 创建 真实 且 多 样 化 生成 对 抗 网 络 ( GAN ) 是 备 受 期 待 的 深度 学 习 模型 ， 可 以 模拟 和 生成 逼真 的
+
+[139] UncategorizedText | page=2
+、
+
+[140] Title | page=2
+扩 散 模型 和 生成 对 抗
+
+[141] UncategorizedText | page=2
+网 络 (GAN ) 。
+
+[142] Title | page=2
+是 一
+
+[143] UncategorizedText | page=2
+。
+
+[144] UncategorizedText | page=2
+种 时 间 循环 神经 网 络 ， 是 为 了 解决 一 般 的 RNN ( 循环 神经 网 络 种 重复 神经 网 络 模块 的 链 式 形式 |),
+
+[145] UncategorizedText | page=2
+)
+
+[146] Title | page=2
+的 数据 样本 ( 包括 图 像
+
+[147] NarrativeText | page=2
+、 文 本 、 视 频 等 ) 加。 像 、 音 频 和 其 他 数据 加。
+
+[148] Title | page=2
+图
+
+[149] Title | page=2
+检索 是
+
+[150] UncategorizedText | page=2
+在 给 定 信息 需求 的 情况 下 识别 和 获取 相关 信息 。 具 体 来 说 ， 让 我 们 考虑 可 以 概念 化 为 键 值 存储 的 信息 资源 ， 其 中 每 个 键 对 应 一 个 值 ( 键 和 值 可 以 相同 给 定 一 个 查询 ， 目 标 是 使 用 相似 度 函 数 从 数据 库 中 选取 最 相似 的 键 ， 并 得 到 配对 的 值 。 根 据 不 同 的 相似 度 函 数 ， 现 有 的 检索 方法 可 以 分 为 稀 耻 索 、 密 集 检索 和 其 他 方法 加。
+
+[151] UncategorizedText | page=2
+)
+
+[152] UncategorizedText | page=2
+。
+
+[153] UncategorizedText | page=2
+稀疏 检索 方法 通常 用 于 文档 检索 ， 其 中 键 / 值 表示 要 搜索 的 文档 。 这 些 方法 利用 术语 匹配 指标 ， 例 如 TF-IDF， 查 询 可 能 性 ; BM2.5 分 析 文本 中 的 单词 统计 数据 并 构建 倒 排 索引 以 实现 高 效 搜索 外。 键 ， 并 构建 近似 最 近邻 (ANN) 索引 以 加 快 搜索 速度 |),
+
+[154] Title | page=2
+密集 检索 方法 使 用 密集 庶
+
+[155] Title | page=2
+入 向 量 表示 查询 和
+
+[156] Title | page=2
+Explore our developer-friendly HTML to PDF API
+
+[157] NarrativeText | page=2
+Printed using PDFCrowd HTML to PDF
+
+[158] Title | page=3
+§ 分 类
+
+[159] Title | page=3
+qh 播报
+
+[160] UncategorizedText | page=3
+基于 查询 的 RAG 基于 查询 的 RAG 源 于 即时 增强 的 理念 ， 将 用 户 的 查询 与 从 检索 到 的 信息 中 获得 的 见解 无 缝 集成 ， 将 其 直接 输入 到 生成 器 输 入 的 初始 阶段 。 这 种 方法 在 RAG 应 用 中 很 普遍 。 检 索 后 ， 获 取 的 内 容 与 用 户 的 原始 查询 合并 以 形成 复合 输入 ， 然 后 由 生成 器 处 理 以 创建 响应 。 基 于 查询 的 RAG 广泛 应 用 于 各 种 模 态 四 。
+
+[161] Title | page=3
+基于 潜在 表征 的 RAG
+
+[162] UncategorizedText | page=3
+在 基于 潜在 表示 的 RAG 框架 中 ， 检 索 到 的 对 象 作为 潜在 表示 被 纳入 生成 模型 。 这 增强 了 模型 的 理解 能 力 并 提高 了 生成 内 容 的 质量 四。
+
+[163] Title | page=3
+基于 Logit 的 RAG
+
+[164] UncategorizedText | page=3
+在 基于 Logit 的 RAG 中 ， 生 成 模型 在 解码 过 程 中 通过 Logit 整合 检索 信息 。 通 常 ， 通 过 简单 的 求 和 或 模型 将 Logit 组 合 起 ， 以 计算 分 步 生成 的 概率 外。
+
+[165] Title | page=3
+来
+
+[166] UncategorizedText | page=3
+推测 性 RAG 推测 性 RAG 寻求 使 用 检索 而 是 纯 生 成 的 方式 ， 从 文档 中 直接 提取 单词 或 短语 ， 以 节省 资源 和 加 快 响应 速度 。 它 将 生成 器 和 检索 器 解 园 ， 从 而 可 以 直接 使 用 预 训练 模型 作为 组 件 。 在 这 个 范式 中 ， 我 们 可 以 探索 更 广泛 的 策略 来 有 效 利 用 检索 到 的 内 容
+
+[167] Title | page=3
+不
+
+[168] UncategorizedText | page=3
+(4)
+
+[169] Title | page=3
+是
+
+[170] Title | page=3
+理论 依据
+
+[171] Title | page=3
+qh 播报
+
+[172] UncategorizedText | page=3
+RAG 模 型 的 理论 依据 主要 围绕 在 利用 检索 、 知 识 填充 、 智 能 助手 、 信 息 检索 、 数 据 更 新 、 定 制 能 力 、 安 全 管理 等 方面 ， 以 提 供 准确 、 及 时 、 解 释 性 强 、 高 度 定制 、 安 全 保障 的 服务 。
+
+[173] Title | page=3
+基于 检索 的 知识 填充 和 自动 生成 : RAG 利
+
+[174] UncategorizedText | page=3
+用 大 规模 文档 集合 进行 检索 ， 填 充 文本 以 生成 准确 的 答案 和 内 容 。
+
+[175] UncategorizedText | page=3
+智能 助手 和 虚拟 代理 : RAG 可 用 于 构建 智能 助手 或 虚拟 代理 ， 通 过 结合 聊天 记录 回答 用 户 问题 ， 提 供 信息 和 执行 任务 。
+
+[176] Title | page=3
+信息 检索 和 知识 图 谱 填
+
+[177] UncategorizedText | page=3
+充 ; RAG 能 改进 信息 检索 系统 ， 使 其 更 准确 深刻 ， 并 用 于 填充 知识 图 谱 中 的 实体 关系 ， 提 高 生成
+
+[178] Title | page=3
+文本
+
+[179] Title | page=3
+的 可 靠
+
+[180] Title | page=3
+性 。
+
+[181] Title | page=3
+数据 更 新
+
+[182] Title | page=3
+及 时 性 和 解释 性 回复 ; RAG 模
+
+[183] Title | page=3
+型 具备 检索 库 的 即时 更
+
+[184] UncategorizedText | page=3
+新 机 制 ， 回 复 具 有 强 解 释 性 ， 由 检索 库 直接 提供 答案 ， 用 户
+
+[185] Title | page=3
+可
+
+[186] Title | page=3
+核实 准确 性 。
+
+[187] Title | page=3
+高 度 定制 能 力 和 安全 隐私
+
+[188] UncategorizedText | page=3
+管理 : RAG 可 根据 特定 领域 的 知识 库 和 prompt 定
+
+[189] Title | page=3
+制 ， 通
+
+[190] Title | page=3
+过 限制 知识 库 权限 实现 安全 控制 。
+
+[191] Title | page=3
+减少 训练 成
+
+[192] UncategorizedText | page=3
+本 和 通用 性 : RAG 模 型 具有 可 拓展 性 ， 通
+
+[193] Title | page=3
+过 大 量 数 据 直 接
+
+[194] UncategorizedText | page=3
+更 新 知识 库 ， 不 需 重新 训练 模型 ， 适 用 于 多 种 任务
+
+[195] UncategorizedText | page=3
+2]
+
+[196] Title | page=3
+是 “应 用 场景
+
+[197] Title | page=3
+播报
+
+[198] ListItem | page=3
+1. 问
+
+[199] UncategorizedText | page=3
+答 系 统 (QA Systems ) : RAG 可 以 文档 集合 来 提供 准确 的 答案 ， 无 需 针 对 每 个 问题 进行 特定 训练。
+
+[200] Title | page=3
+用
+
+[201] UncategorizedText | page=3
+于 构建 强大 的 问答 系统 ， 能 够 回答 用 户 提出 的
+
+[202] Title | page=3
+各 种 问题 。
+
+[203] Title | page=3
+它 能 够 通过 检索 大 规模
+
+[204] ListItem | page=3
+2. 文 档 生 成 和 自动 摘要 ( Document Generation and Automatic Summarization ) : RAG 可 用 于 自动 生成 文章 段落 、 文 档 动 摘要 ， 基 于 检索 的 知识 来 填充 文本 ， 使 得 生成 的 内 容 3 .智能 助手 和 虚拟 代理 ( Intelligent Assistants and Virtual Agents ) : RAG 可 以 用 答 用 户 的 问题 、 提 供 信息 和 执行 任务 ， 无 需 进行 特定 任务 微调 。
+
+[205] Title | page=3
+或
+
+[206] Title | page=3
+自
+
+[207] Title | page=3
+更
+
+[208] Title | page=3
+具 信息 价值 。
+
+[209] Title | page=3
+于 构建 智能 助手 或 虚拟 代理 ， 结 合 聊天 记
+
+[210] Title | page=3
+录 回
+
+[211] ListItem | page=3
+4. 信 息 检索 (Information Retrieval) : RAG 可 以 改进 信息 检索 系统 ， 使 其 更 准确 深刻 。 用 限于 关键 词 匹配 。 5 .知识 图 谱 填充 ( Knowledge Graph Population ) : 新 的 知识 点 7,
+
+[212] Title | page=3
+户
+
+[213] Title | page=3
+可 以 提出 更 具体 的 查询 ， 不
+
+[214] Title | page=3
+再 局
+
+[215] Title | page=3
+RAG 可 以
+
+[216] Title | page=3
+用 于 填充 知识 图 谱
+
+[217] UncategorizedText | page=3
+中 的 实体 关系 ， 通 过 检索 文档 来 识别 和 添加
+
+[218] UncategorizedText | page=3
+1
+
+[219] UncategorizedText | page=3
+技术 优势 外 部 知识 的 利用 : RAG 模 型 这 提高 了 生成 文本 的 可 靠 性 。 及 时 性 : RAG 模 供与 最 新 信息 相关 的 回答 ， 高 度
+
+[220] Title | page=3
+ah 播报
+
+[221] UncategorizedText | page=3
+1
+
+[222] Title | page=3
+可 以
+
+[223] UncategorizedText | page=3
+有 效 地 利用 外 部 知识 库 ， 它 可 以 引用 大 量
+
+[224] UncategorizedText | page=3
+的 信息 ， 以 提供 更 深入 、 准 确 且 有 价值 的 答案 ，
+
+[225] ListItem | page=3
+2. 数 据 更 新
+
+[226] Title | page=3
+型 具备 检索 库 的
+
+[227] Title | page=3
+更
+
+[228] UncategorizedText | page=3
+新 机 制 ， 可 以 实现 知识 的 即时 更 新 ， 无
+
+[229] UncategorizedText | page=3
+需 重新 训练 模型 。 说 明 RAG 模 型 可 以 提
+
+[230] Title | page=3
+适
+
+[231] Title | page=3
+配 要
+
+[232] Title | page=3
+求
+
+[233] Title | page=3
+及 时 性
+
+[234] Title | page=3
+的
+
+[235] Title | page=3
+应
+
+[236] Title | page=3
+用 。
+
+[237] Title | page=3
+Explore our developer-friendly HTML to PDF API
+
+[238] NarrativeText | page=3
+Printed using PDFCrowd HTML to PDF
+
+[239] ListItem | page=4
+3. 回 复 具有 解释 性 : 由 实 答案 的 准确 性 ， 从 信息 来
+
+[240] UncategorizedText | page=4
+于 RAG 模 型 的 答案 直接 来 自 检索 库 ， 它 的 回复 具有 很 强 的 源 中 获取 支持 。
+
+[241] UncategorizedText | page=4
+可 解释 性 ， 减 少 大 模型 的 幻觉 。 用 户
+
+[242] Title | page=4
+可 以 核
+
+[243] UncategorizedText | page=4
+4.
+
+[244] UncategorizedText | page=4
+高 度 定制 能 力 : RAG 模 型 可 以 根据 特定 领域 的 知识 库 和 prompt 进 行 定制 ， 使 其 快速 具备 该 领域 的 适用 于 的 领域 和 应 ， 比 如 虚拟 伴侣 、 虚 拟 宠物 等 应 用 。
+
+[245] Title | page=4
+能
+
+[246] Title | page=4
+力 。 说 明 RAG 模 型 广泛
+
+[247] Title | page=4
+用
+
+[248] ListItem | page=4
+5. 安 全 和 隐私 管理 : RAG 模 型 可 以 通过 限制 知识 库 的 权限 来 实现 安全 控制 ， 确 保 敏 感 信息 不 被 泄露 ， 提 高 了 数据 安全 性 。 本 : RAG 模 型 在 数据 上 具有 很 强 的 可 拓展 性 ， 可 以 将 ， 以 实现 模型 的 知识 更 新 。 这 一 过 程 的 实现 不 需要 重新 训练 模型 ， 更 经 济 实惠 加。
+
+[249] Title | page=4
+6 .减少 训练 成
+
+[250] Title | page=4
+大 量 数据 直接 更 新 到 知识 库
+
+[251] Title | page=4
+限制
+
+[252] Title | page=4
+Q) 播报
+
+[253] UncategorizedText | page=4
+检索 结果 中 的 噪声 信息 检索 不 可 避免 的 噪声 〈 表现 为 不 相关 内 容 或 误导 性 信息 ) 可 能 会 在 RAG 系统 中 造成 故障 点 。 检 索 噪声 的 影响 仍然 不 清 楚 ， 导 致 在 实际 使 用 中 对 度量 选择 和 检索 器 -生成 器 交互 产生 混淆 四。
+
+[254] Title | page=4
+额外 开销
+
+[255] UncategorizedText | page=4
+随 着 检索 源 规模 的 扩大 ， 存 储 和 访问 复杂 度 也 将 增加 [9]。 这 样 的 开销 阻碍 了 RAG 在 对 延迟 敏感 的 实时 服务 中 的 实用 性 。
+
+[256] Title | page=4
+检索 器 和 生成 器
+
+[257] Title | page=4
+之 间 的 差距
+
+[258] Title | page=4
+由 于 检索 器 和 生成 器
+
+[259] UncategorizedText | page=4
+的 目标 可 能 不 一 致 ， 并 且 它们 的 潜在 空间 可 能 不 同 ， 因 此 设计 它们 的 交互 需要 精心 设计 和 优化 。 当 前 的 方法 要 么 将 检索 和 生成 分 开 ， 要 么 在 中 间 阶 段 将 它们 集成 在 一 起 。 虽 然 前 者 更 加 模块 化 ， 但 后 可 以 从 联合 训练 中 受益 ， 但 会 阻 碍 通用 性 。 选 择 种 经 济 有 效 的 交互 方法 来 弥补 差距 是 一 项 挑战 ， 需 要 在 实践 中 深思 熟 虑 四。
+
+[260] Title | page=4
+者
+
+[261] UncategorizedText | page=4
+一
+
+[262] Title | page=4
+系统 复杂 性 增加
+
+[263] UncategorizedText | page=4
+引入 检索 不 可 避免 地 会 增加 系统 复杂 性 和 需要 调整 的 超 参数 数量 |),
+
+[264] Title | page=4
+RAG 的
+
+[265] UncategorizedText | page=4
+一 个 主要 缺点 ， 特 别 是 基于 查询 的 RAG， 是 它 极 。 此 外 ， 加 长 的 上 下 文 也 会 苦 遍 减 慢 生 成 过 程 由。
+
+[266] UncategorizedText | page=4
+大 地 延长 了 上 下 文 ， 这 使 得 它 对
+
+[267] Title | page=4
+于 上 下 文 长 度 有 限
+
+[268] Title | page=4
+的 生成 器 来 说 是
+
+[269] Title | page=4
+不 可 行 的
+
+[270] Title | page=4
+未 来 的 潜在 方向
+
+[271] Title | page=4
+ah 播报
+
+[272] Title | page=4
+灵活 的 RAG 管道
+
+[273] UncategorizedText | page=4
+RAG 系统 正在 逐步 采用 灵活 的 管道 ， 例 如 递归 、 自 适应 和 和 迭代 RAG。 通 过 精确 的 调整 和 细致 的 工程 设计 ， 检 索 源 、 检 索 器 、 生 成 器 和 RAG 子 系统 的 独特 组 合 有 望 解决 复杂 任务 并 提高 整体 性 能 。 我 们 热切 期 待 开 创 性 的 探索 ， 这 将 推动 更 具 创新 性 的 RAG 系统 的 发 展
+
+[274] Title | page=4
+四 。
+
+[275] Title | page=4
+融入 长 尾 和 实时 知识
+
+[276] Title | page=4
+虽然 RAG 的
+
+[277] UncategorizedText | page=4
+一
+
+[278] UncategorizedText | page=4
+个 主要 动机 是 利用 实时 和 长 尾 知识 ， 但 很 少 有 研究 探索 知识 更 新 和 扩展 的 管道 。 许 多 现 有 研究 仅 使 用 生成 器 的 训练 数据 作为 检索 源 ， 而 忽略 了 检索 可 以 提供 的 动态 和 灵活 信息 。 因 此 ， 越 来 越 多 的 研究 设计 了 具有 不 断 更 新 的 知识 和 灵活 来 源 的 RAG 系统 。 我 们 还 希望 RAG 能 更 进一步 ， 适 应 当今 网 络 服务 中 的 个 性 化 信息 四。
+
+[279] UncategorizedText | page=4
+与 其 他 技术 相 结合 RAG 与 其 他 旨 在 提高 AIGC 效率 的 技术 ( 如 微调 、 强 化 学 习 、 思 路 链 和 基于 代理 的 生成 ) 于 早期 阶段 ， 需 要 进一步 研究 ， 通 过 新 颖 的 算法 设计 充分 发 挥 其 潜力 四。
+
+[280] Title | page=4
+相互 关联 。 这 些 方法 的 结合 仍 处
+
+[281] Title | page=4
+多 模 态 RAG
+
+[282] UncategorizedText | page=4
+RAG 已 经 超越 了 它 最 初 基于 文本 的 问答 范围 ， 包 含 了 各 种 各 样 的 模 态 数据 。 这 种 扩展 催生 了 创新 的 多 模 态 模型 ， 将 RAG 概 念 整合 到 各 个 领域 : 图 像 、 音 视频 、Vid2Seq、code。 结语 随 着 LLM 及 RAG 技术 的 不 断 发 展 ，Agent 的 基础 能 力 愈 发 强大 ， 如 何 将 底层 能 力 整合 ， 产 生 一 个 现象 级 的 产品 是 当下 最 直接 的 诉求 。
+
+[283] Title | page=4
+词
+
+[284] Title | page=4
+条 图 册
+
+[285] Title | page=4
+更 多 图 册 >
+
+[286] Title | page=4
+Explore our developer-friendly HTML to PDF API
+
+[287] NarrativeText | page=4
+Printed using PDFCrowd HTML to PDF
+
+[288] NarrativeText | page=5
+ONS =? me) [See [ove aX 一 = 检索 增强 生成 (1 张 )
+
+[289] UncategorizedText | page=5
+|
+
+[290] Title | page=5
+词
+
+[291] Title | page=5
+条 图 片 (1 张 )
+
+[292] Title | page=5
+TAR 分
+
+[293] Title | page=5
+享 你 的 世界
+
+[294] Title | page=5
+查看 更 多 >
+
+[295] NarrativeText | page=5
+RAG 技术 : 让 Al 从 " 书 呆 子 " 变 身 "开卷 小 天 才 "! 普通 Al 是 "闭卷 死 背 党 "， 但 RAG 就 是 "开卷 活 学 王 "。 而 且 RAG 可 不 让 你 忍 不 住 拍 大 腿 叫 好 。
+
+[296] Title | page=5
+只 是 会
+
+[297] Title | page=5
+查 ， 还 能 把 知识 说 得
+
+[298] Title | page=5
+QD Arteria
+
+[299] Title | page=5
+a 考 资料
+
+[300] UncategorizedText | page=5
+1
+
+[301] NarrativeText | page=5
+@ 阿里 云 推出 企业 级 大 模型 RAG 解 决 方案 最 强 外 挂 "可 大 幅 提升 语言 模型 表现 Q .驱动 之 家 [引用 日 期 2024-12-12] 2 @RAG— Miki ! 概念 、 场 景 、 优 势 、 对 比 微调 与 项 目 代码 示例 飞 桨 PaddlePaddle [引用 日 期 2024-12-12] 3 国 【RAG 系 统 综述 】| 一 文 读 懂 RAG ( 检索 增强 生成 ) ww . GPTSecurity |AIGC 网 络 安全 [引用 日 期 2024-12-12]
+
+[302] UncategorizedText | page=5
+%
+
+[303] UncategorizedText | page=5
+.
+
+[304] Title | page=5
+4 @ [2402.19473v6] Retrieval-Generated Content: ASurvey %
+
+[305] UncategorizedText | page=5
+. arxiv [引用 日 期 2024-12-12]
+
+[306] NarrativeText | page=5
+5 国 [1706.03762] Attention Is All You Need qQ . arxiv [引用 日 期 2024-12-12]
+
+[307] Title | page=5
+6 @ [2009.06732] Efficient Transformers: A Survey %
+
+[308] UncategorizedText | page=5
+. arxiv [引用 日 期 2024-12-12]
+
+[309] Title | page=5
+7 @ Long Short-Term Memory | MIT Press Journals & Magazine %
+
+[310] Title | page=5
+. IEEE Xplore [引用 日 期 2024-12-12]
+
+[311] NarrativeText | page=5
+8 @ [2209.00796] Diffusion Models: A Comprehensive Survey of Methods and Applications ® . arxiv [引用 日 期 2024-12-12]
+
+[312] NarrativeText | page=5
+9 @ [2001.06937v1] A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications % . arxiv [引用 日 期 2024-12-12]
+
+[313] NarrativeText | page=5
+10 @ [2311.15578] Experimental Analysis of Large-scale Learnable Vector Storage Compression % . arxiv [引用 日 期 2024-12-12]
+
+[314] Title | page=5
+展开 全 部
+
+[315] Title | page=5
+学 术 论文
+
+[316] Title | page=5
+内 容 来 自 Balen
+
+[317] UncategorizedText | page=5
++ BRS. 图像 检索 数据 库 生 成 方法 ,增强 现实 的 方法 及 装置 .2017
+
+[318] Title | page=5
+查看 全 部 >
+
+[319] Title | page=5
+宝宝 奶粉 质量 排行 榜
+
+[320] Title | page=5
+双 电 源 转 换 开 关
+
+[321] NarrativeText | page=5
+易 贷 通 app 官 方 下 载
+
+[322] Title | page=5
+梦幻 西游 手 游 普陀 怎么 加 点
+
+[323] Title | page=5
+vector 机 器 人
+
+[324] Title | page=5
+monsti 游 戏 下 载
+
+[325] Title | page=5
+加
+
+[326] Title | page=5
+新 手 上 路 成 长 任务
+
+[327] Title | page=5
+中
+
+[328] Title | page=5
+我 有 疑问 内 容 质 疑
+
+[329] Title | page=5
+编辑 入 门
+
+[330] Title | page=5
+在 线 客服
+
+[331] Title | page=5
+过 词 条 申诉 询 与 解 封
+
+[332] Title | page=5
+编辑 规则
+
+[333] Title | page=5
+本 人 编辑 NEW
+
+[334] Title | page=5
+官方 贴吧
+
+[335] Title | page=5
+意见 反馈
+
+[336] UncategorizedText | page=5
+@2025 Baidu 使 用 百度 前 必 读 | 百科 协议 | 隐私 政策 | ©
+
+[337] UncategorizedText | page=5
+百度 百科 合作 平台 | 公 网 安 备 11000002000001 号
+
+[338] Title | page=5
+京 ICP 证 030173 号
+
+[339] Title | page=5
+京
+
+[340] Title | page=5
+Explore our developer-friendly HTML to PDF API
+
+[341] NarrativeText | page=5
+Printed using PDFCrowd H
+
+[342] NarrativeText | page=5
+to PDF

@@ -1,0 +1,30 @@
+[
+  {
+    "strategy": "hi_res",
+    "seconds": 14.1,
+    "elements": 227,
+    "characters": 8247,
+    "types": {
+      "Image": 21,
+      "UncategorizedText": 92,
+      "Header": 4,
+      "NarrativeText": 68,
+      "Table": 4,
+      "FigureCaption": 4,
+      "Title": 30,
+      "ListItem": 4
+    }
+  },
+  {
+    "strategy": "ocr_only",
+    "seconds": 11.55,
+    "elements": 342,
+    "characters": 10894,
+    "types": {
+      "Title": 230,
+      "UncategorizedText": 77,
+      "NarrativeText": 28,
+      "ListItem": 7
+    }
+  }
+]

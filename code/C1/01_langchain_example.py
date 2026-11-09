@@ -47,13 +47,13 @@ prompt = ChatPromptTemplate.from_template("""请根据下面提供的上下文�
 
 # 配置大语言模型
 
-# 使用 AIHubmix
+
 llm = ChatOpenAI(
-    model="glm-4.7-flash-free",
+    model=os.getenv("model_name"),
     temperature=0.7,
     max_tokens=4096,
-    api_key=os.getenv("DEEPSEEK_API_KEY"),
-    base_url="https://aihubmix.com/v1"
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
+    base_url=os.getenv("DASHSCOPE_BASE_URL"),
 )
 
 # llm = ChatOpenAI(
@@ -73,3 +73,4 @@ docs_content = "\n\n".join(doc.page_content for doc in retrieved_docs)
 
 answer = llm.invoke(prompt.format(question=question, context=docs_content))
 print(answer)
+print(answer.content)

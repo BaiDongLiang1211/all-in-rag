@@ -1,0 +1,125 @@
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+PermissionError: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\connection.py", line 254, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPSConnection(host='huggingface.co', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\urllib3\util\retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /unstructuredio/yolo_x_layout/resolve/main/yolox_l0.05.onnx (Caused by NewConnectionError("HTTPSConnection(host='huggingface.co', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\file_download.py", line 1550, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\file_download.py", line 1467, in get_hf_file_metadata
+    r = _request_wrapper(
+        ^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+               ^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\file_download.py", line 306, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\utils\_http.py", line 326, in http_backoff
+    raise err
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\utils\_http.py", line 307, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\utils\_http.py", line 96, in send
+    return super().send(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\requests\adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /unstructuredio/yolo_x_layout/resolve/main/yolox_l0.05.onnx (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。"))'), '(Request ID: ee990305-7f66-4cd0-992b-5c0cecf5ac49)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\study_project_documents\agent_study\rag_study\all-in-rag\code\C2\01_unstructured_example.py", line 21, in <module>
+    elements = partition_pdf(
+               ^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\common\metadata.py", line 162, in wrapper
+    elements = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\chunking\dispatch.py", line 74, in wrapper
+    elements = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\pdf.py", line 225, in partition_pdf
+    return partition_pdf_or_image(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\pdf.py", line 340, in partition_pdf_or_image
+    elements = _partition_pdf_or_image_local(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\utils.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\pdf.py", line 647, in _partition_pdf_or_image_local
+    inferred_document_layout = process_file_with_model(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured_inference\inference\layout.py", line 371, in process_file_with_model
+    model = get_model(model_name, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured_inference\models\base.py", line 97, in get_model
+    model.initialize(**initialize_params)
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured_inference\utils.py", line 40, in __getitem__
+    value = evaluate(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured_inference\utils.py", line 115, in download_if_needed_and_get_local_path
+    return hf_hub_download(path_or_repo, filename, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\file_download.py", line 1014, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\file_download.py", line 1121, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\huggingface_hub\file_download.py", line 1665, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.

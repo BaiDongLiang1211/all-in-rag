@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\pdf2image\pdf2image.py", line 581, in pdfinfo_from_path
+    proc = Popen(command, env=env, stdout=PIPE, stderr=PIPE)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "D:\Anaconda\envs\all-in-rag\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study_project_documents\agent_study\rag_study\all-in-rag\code\C2\01_unstructured_example.py", line 21, in <module>
+    elements = partition_pdf(
+               ^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\common\metadata.py", line 162, in wrapper
+    elements = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\chunking\dispatch.py", line 74, in wrapper
+    elements = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\pdf.py", line 225, in partition_pdf
+    return partition_pdf_or_image(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\pdf.py", line 381, in partition_pdf_or_image
+    elements = _partition_pdf_or_image_with_ocr(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\pdf.py", line 933, in _partition_pdf_or_image_with_ocr
+    for page_number, image in enumerate(
+                              ^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\unstructured\partition\pdf_image\pdf_image_utils.py", line 412, in convert_pdf_to_images
+    info = pdf2image.pdfinfo_from_path(filename, userpw=password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\all-in-rag\Lib\site-packages\pdf2image\pdf2image.py", line 607, in pdfinfo_from_path
+    raise PDFInfoNotInstalledError(
+pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is poppler installed and in PATH?

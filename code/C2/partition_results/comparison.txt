@@ -1,0 +1,5 @@
+hi_res: 14.1 秒，227 个元素，8247 字符
+元素类型: {'Image': 21, 'UncategorizedText': 92, 'Header': 4, 'NarrativeText': 68, 'Table': 4, 'FigureCaption': 4, 'Title': 30, 'ListItem': 4}
+
+ocr_only: 11.55 秒，342 个元素，10894 字符
+元素类型: {'Title': 230, 'UncategorizedText': 77, 'NarrativeText': 28, 'ListItem': 7}
