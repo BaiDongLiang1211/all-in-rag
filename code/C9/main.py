@@ -4,6 +4,7 @@
 """
 
 import os
+from pathlib import Path
 import sys
 import time
 import logging
@@ -28,7 +29,7 @@ from rag_modules.graph_rag_retrieval import GraphRAGRetrieval
 from rag_modules.intelligent_query_router import IntelligentQueryRouter, QueryAnalysis
 
 # 加载环境变量
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 class AdvancedGraphRAGSystem:
     """

@@ -12,13 +12,18 @@ Agentic RAG 完整演示脚本
     python demo.py
 
 前置条件：
-    export OPENAI_API_KEY="your-key"
+    在项目根目录 .env 中设置 model_name、DASHSCOPE_API_KEY、DASHSCOPE_BASE_URL
     export TAVILY_API_KEY="your-key"  # 可选，用于web搜索
 """
 
 import sys
 import os
 import json
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 
 # 添加当前目录到路径
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -167,12 +172,17 @@ def main():
     print("\n📦 初始化组件...")
 
     # 检查API密钥
-    if not os.environ.get("OPENAI_API_KEY"):
-        print("❌ 请设置 OPENAI_API_KEY 环境变量")
-        print("   export OPENAI_API_KEY='sk-...'")
+    if not os.environ.get("DASHSCOPE_API_KEY"):
+        print("❌ 请在项目根目录 .env 中设置 DASHSCOPE_API_KEY")
         sys.exit(1)
 
-    llm = ChatOpenAI(model="gpt-4o", temperature=0)
+    llm = ChatOpenAI(
+        model=os.environ["model_name"],
+        api_key=os.environ["DASHSCOPE_API_KEY"],
+        base_url=os.environ["DASHSCOPE_BASE_URL"],
+        temperature=0,
+        extra_body={"enable_thinking": False},
+    )
 
     # 构建知识库
     print("  构建向量知识库...")

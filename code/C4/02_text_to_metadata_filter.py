@@ -1,11 +1,34 @@
 import os
-from langchain_deepseek import ChatDeepSeek 
+from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import BiliBiliLoader
 from langchain.chains.query_constructor.base import AttributeInfo
 from langchain.retrievers.self_query.base import SelfQueryRetriever
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 import logging
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 获取项目根目录
+project_root = Path(__file__).resolve().parents[2]
+
+# 加载环境变量
+load_dotenv(project_root / ".env")
+
+# 检查必需配置
+required_env = [
+    "model_name",
+    "DASHSCOPE_API_KEY",
+    "DASHSCOPE_BASE_URL"
+]
+
+missing = [key for key in required_env if not os.getenv(key)]
+
+if missing:
+    raise ValueError(
+        f".env 文件缺少以下配置: {missing}"
+    )
 
 logging.basicConfig(level=logging.INFO)
 
@@ -36,11 +59,11 @@ try:
         doc.metadata = metadata
         bili.append(doc)
         
-except Exception as e:
-    print(f"加载BiliBili视频失败: {str(e)}")
+except Exception:
+    logging.exception("加载BiliBili视频失败")
 
 if not bili:
-    print("没有成功加载任何视频，程序退出")
+    logging.error("没有成功加载任何视频，程序退出")
     exit()
 
 # 2. 创建向量存储
@@ -72,11 +95,16 @@ metadata_field_info = [
 ]
 
 # 4. 创建自查询检索器
-llm = ChatDeepSeek(
-    model="deepseek-chat", 
-    temperature=0, 
-    api_key=os.getenv("DEEPSEEK_API_KEY")
-    )
+
+llm = ChatOpenAI(
+    model=os.environ["model_name"],
+    api_key=os.environ["DASHSCOPE_API_KEY"],
+    base_url=os.environ["DASHSCOPE_BASE_URL"],
+    temperature=0.0,
+    max_tokens=2048,
+    timeout=60,
+    extra_body={"enable_thinking": False},
+)
 
 retriever = SelfQueryRetriever.from_llm(
     llm=llm,

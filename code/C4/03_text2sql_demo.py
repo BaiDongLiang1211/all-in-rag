@@ -1,6 +1,11 @@
 import os
 import sys
 import sqlite3
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 # 添加text2sql模块路径
 sys.path.append(os.path.join(os.path.dirname(__file__), 'text2sql'))
@@ -13,9 +18,9 @@ def setup_demo():
     print("=== Text2SQL框架演示 ===\n")
     
     # 检查API密钥
-    api_key = os.getenv("DEEPSEEK_API_KEY")
+    api_key = os.getenv("DASHSCOPE_API_KEY")
     if not api_key:
-        print("先设置DEEPSEEK_API_KEY环境变量")
+        print("请在项目 .env 中设置 DASHSCOPE_API_KEY")
         return None
     
     # 创建演示数据库
@@ -217,4 +222,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    main()

@@ -2,8 +2,14 @@
 RAG系统配置文件
 """
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from typing import Dict, Any
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 @dataclass
 class RAGConfig:
@@ -15,7 +21,7 @@ class RAGConfig:
 
     # 模型配置
     embedding_model: str = "BAAI/bge-small-zh-v1.5"
-    llm_model: str = "kimi-k2-0711-preview"
+    llm_model: str = field(default_factory=lambda: os.environ["model_name"])
 
     # 检索配置
     top_k: int = 3

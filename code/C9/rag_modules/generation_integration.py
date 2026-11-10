@@ -9,31 +9,36 @@ from typing import List
 
 from openai import OpenAI
 from langchain_core.documents import Document
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 
 logger = logging.getLogger(__name__)
 
 class GenerationIntegrationModule:
     """生成集成模块 - 负责答案生成"""
 
-    def __init__(self, model_name: str = "kimi-k2-0711-preview", temperature: float = 0.1, max_tokens: int = 2048):
+    def __init__(self, model_name: str = None, temperature: float = 0.1, max_tokens: int = 2048):
         """
         初始化生成集成模块
         """
-        self.model_name = model_name
+        self.model_name = model_name or os.environ["model_name"]
         self.temperature = temperature
         self.max_tokens = max_tokens
         
-        # 初始化OpenAI客户端（使用Moonshot API）
-        api_key = os.getenv("MOONSHOT_API_KEY")
+        # 初始化OpenAI客户端（使用项目 .env 中的兼容接口）
+        api_key = os.getenv("DASHSCOPE_API_KEY")
         if not api_key:
-            raise ValueError("请设置 MOONSHOT_API_KEY 环境变量")
+            raise ValueError("请设置 DASHSCOPE_API_KEY 环境变量")
         
         self.client = OpenAI(
             api_key=api_key,
-            base_url="https://api.moonshot.cn/v1"
+            base_url=os.environ["DASHSCOPE_BASE_URL"]
         )
 
-        logger.info(f"生成模块初始化完成，模型: {model_name}")
+        logger.info(f"生成模块初始化完成，模型: {self.model_name}")
 
     def generate_adaptive_answer(self, question: str, documents: List[Document]) -> str:
         """
@@ -74,6 +79,7 @@ class GenerationIntegrationModule:
         
         try:
             response = self.client.chat.completions.create(
+                extra_body={"enable_thinking": False},
                 model=self.model_name,
                 messages=[
                     {"role": "user", "content": prompt}
@@ -126,6 +132,7 @@ class GenerationIntegrationModule:
         for attempt in range(max_retries):
             try:
                 response = self.client.chat.completions.create(
+                    extra_body={"enable_thinking": False},
                     model=self.model_name,
                     messages=[
                         {"role": "user", "content": prompt}

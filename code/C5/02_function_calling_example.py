@@ -1,16 +1,22 @@
 from openai import OpenAI
 import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 # 初始化 OpenAI 客户端
 client = OpenAI(
-    api_key=os.getenv("DEEPSEEK_API_KEY"),
-    base_url="https://api.deepseek.com",
+    api_key=os.environ["DASHSCOPE_API_KEY"],
+    base_url=os.environ["DASHSCOPE_BASE_URL"],
 )
 
 # 定义一个函数，用于发送消息并获取模型的响应
 def send_messages(messages, tools=None):
     response = client.chat.completions.create(
-        model="deepseek-chat",
+        extra_body={"enable_thinking": False},
+        model=os.environ["model_name"],
         messages=messages,
         tools=tools,
         tool_choice="auto",  # 让模型自主决定是否调用工具

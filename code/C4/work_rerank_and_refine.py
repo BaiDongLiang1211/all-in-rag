@@ -5,7 +5,7 @@ from langchain.retrievers.document_compressors import LLMChainExtractor
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
-from langchain_deepseek import ChatDeepSeek
+from langchain_openai import ChatOpenAI
 
 # 导入ColBERT重排器需要的模块
 from langchain.retrievers.document_compressors.base import BaseDocumentCompressor
@@ -15,6 +15,11 @@ from typing import Sequence
 import torch
 from transformers import AutoTokenizer, AutoModel
 import torch.nn.functional as F
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 class ColBERTReranker(BaseDocumentCompressor):
     """ColBERT重排器"""
@@ -134,10 +139,12 @@ hf_bge_embeddings = HuggingFaceBgeEmbeddings(
     model_name="BAAI/bge-large-zh-v1.5"
 )
 
-llm = ChatDeepSeek(
-    model="deepseek-chat", 
+llm = ChatOpenAI(
+    base_url=os.environ["DASHSCOPE_BASE_URL"],
+    extra_body={"enable_thinking": False},
+    model=os.environ["model_name"],
     temperature=0.1, 
-    api_key=os.getenv("DEEPSEEK_API_KEY")
+    api_key=os.environ["DASHSCOPE_API_KEY"]
 )
 
 # 1. 加载和处理文档

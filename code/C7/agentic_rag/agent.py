@@ -76,7 +76,7 @@ class AgenticRAG:
     基于 LangGraph 的 Agentic RAG 实现。
 
     使用方式:
-        llm = ChatOpenAI(model="gpt-4o", temperature=0)
+        llm = ...  # 使用 demo.py 中按项目 .env 初始化的 ChatOpenAI
         agent = AgenticRAG(llm=llm, tools=[vector_search, web_search])
         result = agent.run("你的问题")
         print(result["answer"])

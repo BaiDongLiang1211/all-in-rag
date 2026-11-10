@@ -12,6 +12,12 @@ from typing import List, Optional
 from langchain.tools import tool
 from langchain_community.vectorstores import Chroma
 from langchain_community.tools.tavily_search import TavilySearchResults
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 
 
 # ============================================================
@@ -80,7 +86,7 @@ web_search_tool = TavilySearchResults(
         "不适用于查询本地知识库中已有的内容。"
         "输入应为简洁的搜索关键词或短语。"
     ),
-)
+) if os.getenv("TAVILY_API_KEY") else None
 
 
 # ============================================================
@@ -88,7 +94,7 @@ web_search_tool = TavilySearchResults(
 # ============================================================
 def build_knowledge_base(
     documents: List[str],
-    embedding_model_name: str = "text-embedding-3-small",
+    embedding_model_name: str = "BAAI/bge-small-zh-v1.5",
     collection_name: str = "agentic_rag_demo",
     persist_directory: Optional[str] = None,
     chunk_size: int = 300,
@@ -99,7 +105,7 @@ def build_knowledge_base(
 
     Args:
         documents: 文档文本列表
-        embedding_model_name: OpenAI embedding 模型名称
+        embedding_model_name: 本地 HuggingFace 嵌入模型名称
         collection_name: Chroma 集合名称
         persist_directory: 持久化目录（None则使用内存模式）
         chunk_size: 分块大小
@@ -108,7 +114,7 @@ def build_knowledge_base(
     Returns:
         Chroma 向量存储实例
     """
-    from langchain_openai import OpenAIEmbeddings
+    from langchain_huggingface import HuggingFaceEmbeddings
     from langchain.text_splitter import RecursiveCharacterTextSplitter
     from langchain_core.documents import Document
 
@@ -121,7 +127,7 @@ def build_knowledge_base(
     docs = [Document(page_content=text) for text in documents]
     chunks = text_splitter.split_documents(docs)
 
-    embeddings = OpenAIEmbeddings(model=embedding_model_name)
+    embeddings = HuggingFaceEmbeddings(model_name=embedding_model_name)
 
     vectorstore = Chroma.from_documents(
         documents=chunks,

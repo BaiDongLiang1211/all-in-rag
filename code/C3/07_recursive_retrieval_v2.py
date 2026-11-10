@@ -1,21 +1,37 @@
 import os
+from pathlib import Path
 import pandas as pd
 from dotenv import load_dotenv
-from llama_index.core import VectorStoreIndex, Document, Settings
+from llama_index.core import VectorStoreIndex, Document, Settings, PromptTemplate
 from llama_index.core.retrievers import VectorIndexRetriever
 from llama_index.core.query_engine import RetrieverQueryEngine
 from llama_index.core.vector_stores import MetadataFilters, ExactMatchFilter
-from llama_index.llms.deepseek import DeepSeek
+from llama_index.llms.openai_like import OpenAILike
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
-load_dotenv()
+project_root = Path(__file__).resolve().parents[2]
+load_dotenv(project_root / ".env")
 
-# 配置模型
-Settings.llm = DeepSeek(model="deepseek-chat", api_key=os.getenv("DEEPSEEK_API_KEY"))
+# 使用项目 .env 中的模型名、DashScope API Key 和兼容接口地址。
+required_env = ("model_name", "DASHSCOPE_API_KEY", "DASHSCOPE_BASE_URL")
+missing_env = [name for name in required_env if not os.getenv(name)]
+if missing_env:
+    raise ValueError(f"请在项目 .env 或环境变量中配置: {', '.join(missing_env)}")
+
+Settings.llm = OpenAILike(
+    model=os.environ["model_name"],
+    api_key=os.environ["DASHSCOPE_API_KEY"],
+    api_base=os.environ["DASHSCOPE_BASE_URL"],
+    is_chat_model=True,
+    temperature=0.0,
+    max_tokens=2048,
+    context_window=8192,
+    additional_kwargs={"extra_body": {"enable_thinking": False}},
+)
 Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-zh-v1.5")
 
 # 1. 加载和预处理数据
-excel_file = '../../data/C3/excel/movie.xlsx'
+excel_file = project_root / "data/C3/excel/movie.xlsx"
 xls = pd.ExcelFile(excel_file)
 
 summary_docs = []
@@ -88,7 +104,16 @@ def query_safe_recursive(query_str):
     )
     
     # 创建查询引擎并执行查询
-    query_engine = RetrieverQueryEngine.from_args(content_retriever)
+    text_qa_template = PromptTemplate(
+        "根据以下表格内容回答问题。年份由工作表名确定，编号不是年份。\n"
+        "比较评分人数时按实际数值比较全部候选行，不要按文本顺序比较；"
+        "回答电影名称及对应评分人数，便于核对。\n"
+        "表格内容：\n{context_str}\n"
+        "问题：{query_str}\n回答："
+    )
+    query_engine = RetrieverQueryEngine.from_args(
+        content_retriever, text_qa_template=text_qa_template
+    )
     response = query_engine.query(query_str)
     
     print("--- 查询执行结束 ---\n")

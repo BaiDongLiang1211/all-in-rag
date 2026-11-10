@@ -3,12 +3,19 @@ import os
 from langchain_core.prompts import PromptTemplate
 from pydantic import BaseModel, Field
 from langchain_core.output_parsers import PydanticOutputParser
-from langchain_deepseek import ChatDeepSeek
+from langchain_openai import ChatOpenAI
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 # 初始化 LLM
-llm = ChatDeepSeek(
-    model="deepseek-chat",
-    api_key=os.getenv("DEEPSEEK_API_KEY")
+llm = ChatOpenAI(
+    base_url=os.environ["DASHSCOPE_BASE_URL"],
+    extra_body={"enable_thinking": False},
+    model=os.environ["model_name"],
+    api_key=os.environ["DASHSCOPE_API_KEY"]
 )
 
 # 1. 定义数据结构

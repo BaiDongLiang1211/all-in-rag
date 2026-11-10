@@ -1,11 +1,15 @@
 import os
-from langchain_deepseek import ChatDeepSeek 
 from langchain_community.document_loaders import BiliBiliLoader
 from langchain.chains.query_constructor.base import AttributeInfo
 from openai import OpenAI
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 import logging
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 logging.basicConfig(level=logging.INFO)
 
@@ -73,8 +77,8 @@ metadata_field_info = [
 
 # 4. 初始化LLM客户端
 client = OpenAI(
-    base_url="https://api.deepseek.com",
-    api_key=os.getenv("DEEPSEEK_API_KEY")
+    base_url=os.environ["DASHSCOPE_BASE_URL"],
+    api_key=os.environ["DASHSCOPE_API_KEY"]
 )
 
 # 5. 获取所有文档用于排序
@@ -106,7 +110,8 @@ for query in queries:
 JSON指令:"""
     
     response = client.chat.completions.create(
-        model="deepseek-chat",
+        extra_body={"enable_thinking": False},
+        model=os.environ["model_name"],
         messages=[
             {"role": "user", "content": prompt}
         ],

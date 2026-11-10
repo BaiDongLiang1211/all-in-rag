@@ -234,6 +234,7 @@ class GraphRAGRetrieval:
         
         try:
             response = self.llm_client.chat.completions.create(
+                extra_body={"enable_thinking": False},
                 model=self.config.llm_model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.1,

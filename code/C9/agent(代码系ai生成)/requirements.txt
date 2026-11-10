@@ -4,3 +4,4 @@ neo4j==5.28.1
 requests==2.32.4
 dataclasses==0.6
 openai==1.97.0
+python-dotenv>=1.0.0

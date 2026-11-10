@@ -1,13 +1,20 @@
 import os
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_deepseek import ChatDeepSeek
+from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableBranch
+from pathlib import Path
+from dotenv import load_dotenv
 
-llm = ChatDeepSeek(
-    model="deepseek-chat", 
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
+
+llm = ChatOpenAI(
+    base_url=os.environ["DASHSCOPE_BASE_URL"],
+    extra_body={"enable_thinking": False},
+    model=os.environ["model_name"],
     temperature=0, 
-    api_key=os.getenv("DEEPSEEK_API_KEY")
+    api_key=os.environ["DASHSCOPE_API_KEY"]
     )
 
 # 1. 设置不同菜系的处理链

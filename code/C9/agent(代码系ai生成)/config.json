@@ -1,11 +1,4 @@
 {
-  "kimi": {
-    "api_key": "sk-xxx",
-    "base_url": "https://api.moonshot.cn/v1",
-    "model": "kimi-k2-0711-preview",
-    "max_retries": 3,
-    "timeout": 30
-  },
   "processing": {
     "batch_size": 10,
     "delay_between_requests": 1,

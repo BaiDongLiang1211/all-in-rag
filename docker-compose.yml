@@ -1,0 +1,5 @@
+# Reuse the existing Milvus stack and keep data under code/volumes/.
+name: code
+
+include:
+  - path: ./code/docker-compose.yml

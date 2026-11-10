@@ -2,7 +2,7 @@ import os
 import asyncio
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 from llama_index.core.node_parser import SentenceWindowNodeParser, SentenceSplitter
-from llama_index.llms.deepseek import DeepSeek
+from llama_index.llms.openai_like import OpenAILike
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core.postprocessor import MetadataReplacementPostProcessor
 from llama_index.core.evaluation import (
@@ -12,8 +12,22 @@ from llama_index.core.evaluation import (
 )
 from llama_index.core.evaluation.eval_utils import get_results_df
 from llama_index.core.evaluation import DatasetGenerator, QueryResponseDataset
+from pathlib import Path
+from dotenv import load_dotenv
 
-Settings.llm = DeepSeek(model="deepseek-chat", temperature=0.1, api_key=os.getenv("DEEPSEEK_API_KEY"))
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
+
+Settings.llm = OpenAILike(
+    model=os.environ["model_name"],
+    api_key=os.environ["DASHSCOPE_API_KEY"],
+    api_base=os.environ["DASHSCOPE_BASE_URL"],
+    is_chat_model=True,
+    temperature=0.1,
+    max_tokens=2048,
+    context_window=8192,
+    additional_kwargs={"extra_body": {"enable_thinking": False}},
+)
 Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en")
 
 async def main():

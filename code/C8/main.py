@@ -20,7 +20,7 @@ from rag_modules import (
 )
 
 # 加载环境变量
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 # 配置日志
 logging.basicConfig(
@@ -50,8 +50,8 @@ class RecipeRAGSystem:
             raise FileNotFoundError(f"数据路径不存在: {self.config.data_path}")
 
         # 检查API密钥
-        if not os.getenv("MOONSHOT_API_KEY"):
-            raise ValueError("请设置 MOONSHOT_API_KEY 环境变量")
+        if not os.getenv("DASHSCOPE_API_KEY"):
+            raise ValueError("请设置 DASHSCOPE_API_KEY 环境变量")
     
     def initialize_system(self):
         """初始化所有模块"""

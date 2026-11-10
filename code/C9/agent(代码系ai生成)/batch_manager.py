@@ -10,6 +10,11 @@ import sys
 import argparse
 from datetime import datetime
 from recipe_ai_agent import KimiRecipeAgent, RecipeKnowledgeGraphBuilder
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 
 def load_config():
     """加载配置文件"""
@@ -95,7 +100,7 @@ def clean_batches(output_dir: str):
 def merge_batches(output_dir: str):
     """手动合并所有批次数据"""
     config = load_config()
-    api_key = config["kimi"].get("api_key")
+    api_key = os.getenv("DASHSCOPE_API_KEY")
     
     if not api_key:
         print("❌ 未找到API密钥配置")
@@ -124,7 +129,7 @@ def merge_batches(output_dir: str):
 def continue_processing(recipe_dir: str, output_dir: str):
     """继续处理中断的任务"""
     config = load_config()
-    api_key = config["kimi"].get("api_key")
+    api_key = os.getenv("DASHSCOPE_API_KEY")
     
     if not api_key:
         print("❌ 未找到API密钥配置")

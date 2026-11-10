@@ -8,6 +8,11 @@ import os
 import json
 import sys
 from recipe_ai_agent import KimiRecipeAgent, RecipeKnowledgeGraphBuilder
+from pathlib import Path
+from dotenv import load_dotenv
+
+# 固定读取项目根目录的模型配置，不依赖终端当前目录。
+load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 
 def load_config():
     """加载配置文件"""
@@ -18,10 +23,6 @@ def load_config():
     else:
         print("警告: 未找到config.json配置文件，将使用默认配置")
         return {
-            "kimi": {
-                "api_key": "",
-                "base_url": "https://api.moonshot.cn/v1"
-            },
             "output": {
                 "format": "neo4j",
                 "directory": "./ai_output"
@@ -30,12 +31,9 @@ def load_config():
 
 def setup_api_key():
     """设置API密钥"""
-    api_key = os.getenv('KIMI_API_KEY')
+    api_key = os.getenv("DASHSCOPE_API_KEY")
     if not api_key:
-        api_key = input("请输入Kimi API密钥: ").strip()
-        if not api_key:
-            print("错误: 必须提供API密钥")
-            sys.exit(1)
+        raise ValueError("请在项目 .env 中设置 DASHSCOPE_API_KEY")
     return api_key
 
 def get_recipe_directory():
@@ -84,9 +82,7 @@ def test_single_recipe():
     
     # 加载配置
     config = load_config()
-    api_key = config["kimi"].get("api_key")
-    if not api_key or api_key == "YOUR_KIMI_API_KEY_HERE":
-        api_key = setup_api_key()
+    api_key = setup_api_key()
     
     try:
         agent = KimiRecipeAgent(api_key)
@@ -113,16 +109,14 @@ def main():
     config = load_config()
     
     # 设置API密钥
-    api_key = config["kimi"].get("api_key")
-    if not api_key or api_key == "YOUR_KIMI_API_KEY_HERE":
-        api_key = setup_api_key()
+    api_key = setup_api_key()
     
     # 获取菜谱目录
     recipe_dir = get_recipe_directory()
     
     # 确认参数
     print(f"\n配置信息:")
-    print(f"- API密钥: {api_key[:8]}...")
+    print("- API密钥: 已从项目 .env 读取")
     print(f"- 菜谱目录: {recipe_dir}")
     print(f"- 输出格式: {config['output'].get('format', 'neo4j')}")
     print(f"- 输出目录: {config['output'].get('directory', './ai_output')}")
@@ -135,7 +129,7 @@ def main():
     try:
         # 创建AI agent
         print("\n🤖 初始化AI Agent...")
-        ai_agent = KimiRecipeAgent(api_key, config["kimi"].get("base_url"))
+        ai_agent = KimiRecipeAgent(api_key)
         
         # 创建知识图谱构建器
         output_dir = config["output"].get("directory", "./ai_output")
@@ -184,7 +178,7 @@ def show_help():
   python run_ai_agent.py test
   
 环境变量:
-          KIMI_API_KEY - Kimi API密钥
+          项目 .env：model_name、DASHSCOPE_API_KEY、DASHSCOPE_BASE_URL
   
 配置文件:
   config.json - 详细配置选项
@@ -205,4 +199,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] in ["-h", "--help", "help"]:
         show_help()
     else:
-        main() 
+        main()
