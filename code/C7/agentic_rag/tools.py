@@ -9,9 +9,9 @@ Agentic RAG 工具集
 """
 
 from typing import List, Optional
-from langchain.tools import tool
-from langchain_community.vectorstores import Chroma
-from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_core.tools import tool
+from langchain_core.documents import Document
+from langchain_chroma import Chroma
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -29,15 +29,15 @@ class VectorSearchTool:
 
     设计要点：
     1. tool description 必须清晰说明适用/不适用场景
-    2. 返回结果包含相关性分数，供Agent评估时参考
+    2. 逐篇返回文档，便于Agent累计证据和去重
     3. 支持自定义返回数量k
     """
 
     def __init__(self, vectorstore: Chroma):
         self.vectorstore = vectorstore
+        self.search = tool("vector_search")(self._search)
 
-    @tool
-    def search(self, query: str, k: int = 5) -> str:
+    def _search(self, query: str, k: int = 5) -> List[Document]:
         """
         在本地向量知识库中检索与查询语义相关的文档。
 
@@ -55,38 +55,46 @@ class VectorSearchTool:
             k: 返回文档数量，默认5
 
         Returns:
-            格式化的检索结果，包含文档内容和相关性分数
+            文档列表，距离分数保存在metadata中；没有结果时返回空列表
         """
         docs = self.vectorstore.similarity_search_with_score(query, k=k)
-        if not docs:
-            return "[vector_search 结果] 未找到相关文档。建议尝试：1) 使用同义词改写查询 2) 减少限定条件 3) 改用 web_search 工具"
-
-        results = []
-        for i, (doc, score) in enumerate(docs, 1):
-            # Chroma 返回的距离分数，越小越相关；转为易读的格式
-            results.append(
-                f"[文档{i}] 相关性: {score:.4f} | "
-                f"内容: {doc.page_content[:500]}"
-                + ("..." if len(doc.page_content) > 500 else "")
-                + f" | 来源: {doc.metadata.get('source', '未知')}"
-            )
-        return "\n\n".join(results)
+        # 保留全文；不将查询相关的距离或排名拼入正文，以免影响去重。
+        return [
+            Document(page_content=doc.page_content,
+                     metadata={**doc.metadata, "distance": float(score)})
+            for doc, score in docs
+        ]
 
 
 # ============================================================
 # 工具2：Web搜索
 # ============================================================
-web_search_tool = TavilySearchResults(
-    max_results=3,
-    search_depth="advanced",
-    include_answer=True,
-    description=(
-        "在互联网上搜索实时信息。"
-        "适用场景：需要最新新闻、实时数据、近期事件时使用。"
-        "不适用于查询本地知识库中已有的内容。"
-        "输入应为简洁的搜索关键词或短语。"
-    ),
-) if os.getenv("TAVILY_API_KEY") else None
+@tool("web_search")
+def _web_search(query: str) -> List[Document]:
+    """在互联网上搜索最新新闻、实时数据和近期事件。输入简洁的搜索关键词。"""
+    from langchain_community.utilities.tavily_search import TavilySearchAPIWrapper
+
+    result = TavilySearchAPIWrapper().raw_results(
+        query=query, max_results=3, search_depth="advanced", include_answer=False
+    )
+    # 只返回网页证据，不把搜索服务生成的答案或响应元数据作为证据。
+    documents = []
+    seen = set()
+    for item in result.get("results", []):
+        content = (item.get("content") or "").strip()
+        source = item.get("url") or ""
+        identity = source or content
+        if not content or identity in seen:
+            continue
+        seen.add(identity)
+        documents.append(Document(
+            page_content=content[:2000],
+            metadata={"source": source, "title": item.get("title", ""), "kind": "web"},
+        ))
+    return documents
+
+
+web_search_tool = _web_search if os.getenv("TAVILY_API_KEY") else None
 
 
 # ============================================================
@@ -124,7 +132,8 @@ def build_knowledge_base(
         separators=["\n\n", "\n", "。", "，", " ", ""],
     )
 
-    docs = [Document(page_content=text) for text in documents]
+    docs = [Document(page_content=text, metadata={"source": f"{collection_name}/原文{i}", "kind": "local"})
+            for i, text in enumerate(documents, 1)]
     chunks = text_splitter.split_documents(docs)
 
     embeddings = HuggingFaceEmbeddings(model_name=embedding_model_name)

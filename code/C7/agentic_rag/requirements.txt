@@ -1,13 +1,15 @@
 # Agentic RAG 依赖
 # 安装: pip install -r requirements.txt
 
-langgraph>=0.2.0
+# 与项目现有 langchain-core 0.3.71 配合使用。
+langgraph==0.6.11
 langchain>=0.3.0
 langchain-openai>=0.2.0
 langchain-huggingface==0.3.1
 python-dotenv>=1.0.0
 langchain-community>=0.3.0
 chromadb>=0.5.0
+langchain-chroma==0.2.5
 sentence-transformers>=3.0.0
 tavily-python>=0.5.0
 

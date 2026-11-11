@@ -8,9 +8,8 @@
 # 1. 安装依赖
 pip install -r requirements.txt
 
-# 2. 设置API密钥
-export OPENAI_API_KEY="sk-..."
-export TAVILY_API_KEY="..."  # 可选，用于web搜索
+# 2. 在 all-in-rag/.env 中配置 model_name、DASHSCOPE_API_KEY、DASHSCOPE_BASE_URL
+# 可选：在同一 .env 中配置 TAVILY_API_KEY，启用 Web 搜索
 
 # 3. 运行演示
 python demo.py
@@ -20,7 +19,7 @@ python demo.py
 
 ```
 agentic_rag/
-├── agent.py          # AgenticRAG 核心实现（LangGraph状态图）
+├── agentic_rag_structured.py  # AgenticRAG 核心实现（结构化输出 + LangGraph）
 ├── tools.py          # 检索工具定义（向量检索 + Web搜索）
 ├── demo.py           # 完整演示：Agentic RAG vs 传统RAG对比
 └── requirements.txt  # 依赖列表

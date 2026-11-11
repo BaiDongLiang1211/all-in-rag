@@ -29,7 +29,7 @@ load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from langchain_openai import ChatOpenAI
-from agent import AgenticRAG
+from agentic_rag_structured import AgenticRAG, invoke_answer
 from tools import VectorSearchTool, web_search_tool, build_knowledge_base
 
 
@@ -112,7 +112,7 @@ TEST_QUERIES = [
     {
         "query": "2024年诺贝尔物理学奖得主的研究与2024年诺贝尔化学奖得主的研究之间有什么联系？",
         "description": "跨领域多跳推理",
-        "expected_behavior": "需要至少2轮检索：先获取物理奖信息，再获取化学奖信息，然后分析技术联系",
+        "expected_behavior": "分别检索双方研究及其联系；证据充分即回答，不强制多轮",
     },
     # 简单问题：应该1轮就够
     {
@@ -151,10 +151,10 @@ def run_baseline_rag(query: str, vectorstore, llm) -> dict:
 
 请给出准确、完整的答案。如果信息不足，请指出。"""
 
-    response = llm.invoke(prompt)
+    answer = invoke_answer(llm, prompt)
 
     return {
-        "answer": response.content,
+        "answer": answer,
         "retrieved_docs": len(docs),
         "context": context[:500],
     }
@@ -221,6 +221,9 @@ def main():
         # ── 传统 RAG (Baseline) ──
         print(f"\n{'▶'*20} 传统 RAG (Baseline) {'◀'*20}")
         baseline_result = run_baseline_rag(query, vectorstore, llm)
+        print(f"检索到 {baseline_result['retrieved_docs']} 个文本块。")
+        print("传统 RAG 完整答案：")
+        print(baseline_result["answer"])
 
         # ── 对比展示 ──
         print(f"\n{'─'*70}")
@@ -263,12 +266,11 @@ def main():
         print(f"\n{'─'*70}")
         print(f"✅ Agentic RAG 答案:")
         print(f"{'─'*70}")
-        print(agentic_result["answer"][:800])
+        print(agentic_result["answer"])
 
         print(f"\n{'─'*70}")
-        print(f"✅ 传统 RAG 答案:")
+        print(f"✅ 传统 RAG 完整答案已在上方 Baseline 阶段打印。")
         print(f"{'─'*70}")
-        print(baseline_result["answer"][:800])
 
         if i < len(TEST_QUERIES) - 1:
             print(f"\n\n{'='*70}")

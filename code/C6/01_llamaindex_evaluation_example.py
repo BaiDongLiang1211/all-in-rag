@@ -1,5 +1,6 @@
 import os
 import asyncio
+import json
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 from llama_index.core.node_parser import SentenceWindowNodeParser, SentenceSplitter
 from llama_index.llms.openai_like import OpenAILike
@@ -10,13 +11,14 @@ from llama_index.core.evaluation import (
     RelevancyEvaluator,
     BatchEvalRunner,
 )
-from llama_index.core.evaluation.eval_utils import get_results_df
-from llama_index.core.evaluation import DatasetGenerator, QueryResponseDataset
+from llama_index.core.llama_dataset import LabelledRagDataset, LabelledRagDataExample
+from llama_index.core.llama_dataset.generator import RagDatasetGenerator
 from pathlib import Path
 from dotenv import load_dotenv
 
 # 固定读取项目根目录的模型配置，不依赖终端当前目录。
-load_dotenv(Path(__file__).resolve().parents[2] / ".env")
+project_root = Path(__file__).resolve().parents[2]
+load_dotenv(project_root / ".env")
 
 Settings.llm = OpenAILike(
     model=os.environ["model_name"],
@@ -32,18 +34,33 @@ Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en")
 
 async def main():
     # 1. 加载文档
-    reader = SimpleDirectoryReader(input_files=["../../data/C3/pdf/IPCC_AR6_WGII_Chapter03.pdf"])
+    reader = SimpleDirectoryReader(input_files=[project_root / "data/C3/pdf/IPCC_AR6_WGII_Chapter03.pdf"])
     documents = reader.load_data()
 
     # 1.1 加载或生成响应评估数据集
-    if os.path.exists("./c6_response_eval_dataset.json"):
+    dataset_path = Path(__file__).with_name("c6_response_eval_dataset.json")
+    if dataset_path.exists():
         print("加载响应评估数据集...")
-        response_eval_dataset = QueryResponseDataset.from_json("./c6_response_eval_dataset.json")
+        dataset_data = json.loads(dataset_path.read_text(encoding="utf-8"))
+        if "queries" in dataset_data:
+            # 兼容已有的旧格式 JSON，不实例化已弃用的 QueryResponseDataset。
+            response_eval_dataset = LabelledRagDataset(examples=[
+                LabelledRagDataExample(
+                    query=question,
+                    reference_answer=dataset_data.get("responses", {}).get(query_id, ""),
+                )
+                for query_id, question in dataset_data["queries"].items()
+            ])
+        else:
+            response_eval_dataset = LabelledRagDataset.from_json(str(dataset_path))
     else:
         print("生成响应评估数据集...")
-        dataset_generator = DatasetGenerator.from_documents(documents[:10])  # 减少文档数量
-        response_eval_dataset = await dataset_generator.agenerate_dataset_from_nodes(num=15)  # 减少问题数量
-        response_eval_dataset.save_json("./c6_response_eval_dataset.json")
+        generation_nodes = SentenceSplitter().get_nodes_from_documents(documents[:10])
+        dataset_generator = RagDatasetGenerator(
+            nodes=generation_nodes[:15], num_questions_per_chunk=1  # 最多 15 个问题
+        )
+        response_eval_dataset = await dataset_generator.agenerate_dataset_from_nodes()
+        response_eval_dataset.save_json(str(dataset_path))
 
 
 
@@ -80,7 +97,7 @@ async def main():
     # 4. 执行响应评估对比
     print("开始执行响应评估对比...")
     evaluators = {"faithfulness": faithfulness_evaluator, "relevancy": relevancy_evaluator}
-    queries = response_eval_dataset.queries
+    queries = [example.query for example in response_eval_dataset.examples]
 
     # 句子窗口检索响应评估
     print("\n=== 评估句子窗口检索 ===")
